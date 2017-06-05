@@ -6,6 +6,7 @@ class Customer{
 	protected $cust_second_name;
 	protected $cust_last_name;
 	protected $cust_idno;
+	protected $cust_placeOfWork;
 	
 	public function __construct(){
 		
