@@ -1,12 +1,28 @@
 <?php 
 include 'library/FormComponents.php';
+//include 'library/FormComponents/FormField.php';
+include 'library/FormFactory.php';
 ?>
+
 <form method="post" action=""> 
-	<?php echo $txt_fname; ?>
-	<?php echo $txt_mname; ?>
-	<?php echo $txt_lname; ?>
+	<?php
+//form container
+	echo $container->getContainerStart();
 	
-	<br>
-	<?php echo $btn_submit; ?>	
+	//data row
+	echo $container->getTR();
+		echo $container->getTD();
+			echo $firstNamefield->getField();
+		echo $container->getTdEnd();
+		echo $container->getTD();
+			echo $middleName->getField();
+		echo $container->getTdEnd();
+		echo $container->getTD();
+			echo $lastName->getField();
+		echo $container->getTdEnd();
+		echo $container->getTrEnd();
+	?>
+
+	<?php echo $container->getContainerEnd(); ?>	
 	
 </form>
