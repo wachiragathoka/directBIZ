@@ -1,28 +1,40 @@
 <?php 
-include 'library/FormComponents.php';
-//include 'library/FormComponents/FormField.php';
 include 'library/FormFactory.php';
+include_once 'library/FormComponents/FormContainer.php';
 ?>
 
-<form method="post" action=""> 
+<form method="post" action="./application/controller/PA_controller.php"> 
 	<?php
 //form container
+
+	$formFactory=new FormFactory();
+	$container=new FormContainer();
+	
 	echo $container->getContainerStart();
 	
-	//data row
-	echo $container->getTR();
-		echo $container->getTD();
-			echo $firstNamefield->getField();
-		echo $container->getTdEnd();
-		echo $container->getTD();
-			echo $middleName->getField();
-		echo $container->getTdEnd();
-		echo $container->getTD();
-			echo $lastName->getField();
-		echo $container->getTdEnd();
-		echo $container->getTrEnd();
+	//Personal data	
+	echo $formFactory->createpersonalData();
+	
+	//contact data
+	echo $formFactory->createContactData();
+	
+	//Idnentification
+	echo $formFactory->createIdentification();
+	
+	//Next of a KIN
+	echo $formFactory->createNextOFAKin();
+	
+	echo $container->getContainerEnd();	
+	
+	echo $formFactory->coverDetails();
+	
+	echo $formFactory->declaraions();
+	
+	echo $formFactory->finalDeclaration();
+	
+	echo $formFactory->buttonControls();
+	
 	?>
 
-	<?php echo $container->getContainerEnd(); ?>	
 	
 </form>
