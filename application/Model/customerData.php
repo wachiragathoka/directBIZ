@@ -6,7 +6,7 @@ Class CustomerData {
 	}
 	
 	function insertCustomerData($paramFirstName,$paramSecondName,$paramLastName){
-		echo $paramFirstName.$paramSecondName.$paramLastName;
+		//echo $paramFirstName.$paramSecondName.$paramLastName;
 	}
 	
 	function fetchCustomerById(){

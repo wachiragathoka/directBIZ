@@ -75,10 +75,10 @@
 </head>
 <body>
 
-<h2>Animated Modal with Header and Footer</h2>
+<h2>Click below to view Quote</h2>
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
+<button id="myBtn">Click to view Quote</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -124,7 +124,106 @@
       	</tr>
       	
       </table></p>
-      <p>Some other text...</p>
+      <p><table>
+      	<tr>
+      		<td>Cover option:</td>
+      		<td><?php ?></td>
+      		<td>Start date:</td>
+      		<td><?php ?></td>
+      		<td>End date:</td>
+      		<td><?php ?></td>
+      	</tr>      	
+      </table></p>
+      
+      <p>
+      	<table>
+      		<tr>
+      			<td> BENEFIT </td>
+      			<td> Accidental death</td>
+      			<td> Accidental Permanent Total Disablement</td>
+      			<td> Hospital cash</td>
+      			<td> Accidental temprary, total disablement.<br> Per week maximum 104 weeks</td>
+      			<td> Accidental medical Expense</td>
+      			<td> Artificial Appliance</td>
+      			<td> Last Expense(Accidental Death)</td>
+      		</tr>
+      		<tr>
+      			<td> Amount ( KES )</td>
+      			<td> <?php ?></td>
+      			<td> <?php ?></td>
+      			<td> <?php ?></td>
+      			<td> <?php ?></td>
+      			<td> <?php ?></td>
+      			<td> <?php ?></td>
+      			<td> <?php ?></td>
+      		</tr>
+      	</table>
+      </p>
+      
+      <p>
+      
+      	<table>
+      		<tr>
+      			<td> Declaration</td>
+      			<td> Response </td>
+      		</tr>
+      		<tr>
+      			<td> <?php ?> </td>
+      			<td> <?php ?></td>
+      		</tr>
+      	</table>
+      </p>
+      <p>
+      <table>
+      	<tr>
+      		<td>1. Manufacture of fireworks or explosives</td>
+      		<td>5. Racing, Rallies and speed testing</td>
+      	</tr>
+      	<tr>
+      		<td>2. Sinking of air, water or gas wells</td>
+      		<td>6. Naval, military, police or Air force operations</td>
+      	</tr>
+      	<tr>
+      		<td>3. Construction and maintenance of coffer dam</td>
+      		<td>7. Professional sports</td>
+      	</tr>
+      	<tr>
+      		<td>4. Airline crew & ship or boat crew</td>
+      		<td>8. Diving</td>
+      	</tr>
+      	<tr>
+      		<td>9. Mining</td>
+      		<td></td>
+      	</tr>
+      </table>
+      	
+      </p>
+      
+      <p>
+      	<table>
+      		<tr>
+      			<td>MPESA</td>
+      			<td>BANK DEPOSIT</td>
+      		</tr>
+      		<tr>
+      			<td>Paybill Number: 260260</td>
+      			<td>Bank Name : Kenya Commercial Bank</td>
+      		</tr>
+      		<tr>
+      			<td>Account Number : Your Policy Number</td>
+      			<td>Account Name : UAP INSURANCE COMPANY LIMITED</td>
+      		</tr>
+      		<tr>
+      			<td></td>
+      			<td>Account number : 1107154170</td>
+      		</tr>
+      		<tr>
+      			<td></td>
+      			<td>Branch : Moi Avenue</td>
+      		</tr>
+      		
+      	</table>
+      </p>
     </div>
     <div class="modal-footer">
       <h3>Modal Footer</h3>
