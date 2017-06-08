@@ -1,4 +1,5 @@
 <?php
+include '../Model/customerData.php';
 class Customer{
 	
 	protected $cust_title;
@@ -8,8 +9,24 @@ class Customer{
 	protected $cust_idno;
 	protected $cust_placeOfWork;
 	
-	public function __construct(){
+
+	function __construct() {
+		$this->cust_first_name= isset($_POST['firstName']) ? $_POST['firstName'] : null;
+		$this->cust_second_name= isset($_POST['mName']) ? $_POST['mName'] : null;
+		$this->cust_last_name= isset($_POST['lname']) ? $_POST['lname'] : null;
+	}
+	
+	
+	function start() {
+		if (empty($this->cust_first_name) || empty($this->cust_last_name) || empty($this->cust_second_name)) {
+			throw new Exception("Empty Post not allowed");
+		}
 		
+		else
+		{
+			$customerData=new CustomerData();
+			$customerData->insertCustomerData($this->cust_first_name,$this->cust_second_name,$this->cust_last_name);
+		}
 	}
 	
 	
