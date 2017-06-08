@@ -1,7 +1,5 @@
 <?php
-
-class FormContainer{
-	
+class FormContainer{	
 	var $containerStart;
 	var $containerend;
 	
@@ -95,7 +93,5 @@ class FormContainer{
 	
 	function getControlsTD($param) {
 		return "<td align=right height=20px>".$param."</td>";
-	}
-	
-	
+	}	
 }

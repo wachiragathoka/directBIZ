@@ -30,7 +30,7 @@ else if(isset($_REQUEST['compute']) && $_REQUEST['compute']=="personalaccident_s
 
 else{
 	include 'application/views/pa_s.php';
-	//include 'views/home.php';
+	//include 'views/home.php';	
 }
 /**
  * footer

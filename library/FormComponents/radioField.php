@@ -24,14 +24,3 @@ class RadioField{
 	}
 }
 ?>
-<!-- <div class="example">
-<div>
-<input id="radio1" type="radio" name="radio" value="1" checked="checked"><label for="radio1"><span><span></span></span>Option 1</label>
-</div>
-<div>
-<input id="radio2" type="radio" name="radio" value="2"><label for="radio2"><span><span></span></span>Option 2</label>
-</div>
-<div>
-<input id="radio3" type="radio" name="radio" value="3"><label for="radio3"><span><span></span></span>Option 3</label>
-</div>
-</div> -->

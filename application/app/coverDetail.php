@@ -44,5 +44,4 @@ class CoverDetail{
 	function getExcludedItems(){
 		return $this->excludedItems;
 	}
-	
 }
