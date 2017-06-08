@@ -1,5 +1,5 @@
 <?php
-include '../Model/customerData.php';
+include '../Model/customerDataModel.php';
 class Customer{
 	
 	protected $cust_title;
@@ -24,7 +24,7 @@ class Customer{
 		
 		else
 		{
-			$customerData=new CustomerData();
+			$customerData=new CustomerDataModel();
 			$customerData->insertCustomerData($this->cust_first_name,$this->cust_second_name,$this->cust_last_name);
 		}
 	}

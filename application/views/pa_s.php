@@ -34,7 +34,5 @@ include_once 'library/FormComponents/FormContainer.php';
 	
 	echo $formFactory->buttonControls();
 	
-	?>
-
-	
+	?>	
 </form>

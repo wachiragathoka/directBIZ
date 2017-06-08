@@ -1,3 +1,11 @@
+<?php 
+include '../../library/modalFactory.php';
+//include 'library/FormFactory.php';
+//include_once 'library/FormComponents/FormContainer.php';
+
+
+$modalFatory= new ModalFactory();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,14 +15,15 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 60px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: 90%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
 }
 
 /* Modal Content */
@@ -59,7 +68,7 @@
 }
 
 .modal-header {
-    padding: 2px 16px;
+    padding: 2px 10px;
     background-color: #5cb85c;
     color: white;
 }
@@ -67,9 +76,22 @@
 .modal-body {padding: 2px 16px;}
 
 .modal-footer {
-    padding: 2px 16px;
+    padding: 2px 10px;
     background-color: #5cb85c;
     color: white;
+}
+
+table{
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td, th { border: 1px solid #CCC; padding: 5px;} 
+
+th {
+background: #F3F3F3; /* Light grey background */
+font-weight: bold; /* Make sure they're bold */
 }
 </style>
 </head>
@@ -87,146 +109,16 @@
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>Modal Header</h2>
+      <h2>Cover Summary</h2>
     </div>
     <div class="modal-body">
-      <p><table>
-      	<tr>
-      		<td>Name</td>
-      		<td><?php ?></td>
-      		<td>Phone Number</td>
-      		<td><?php ?></td>
-      		<td>ID No</td>
-      		<td></td>
-      		<td></td>
-      		<td></td>
-      	</tr>
-      	<tr>
-      		<td>Email Address</td>
-      		<td><?php ?></td>
-      		<td>KRA PIN</td>
-      		<td><?php ?></td>
-      		<td>Date Of birth</td>
-      		<td><?php ?></td>
-      		<td>Postal address</td>
-      		<td><?php ?></td>
-      	</tr>
-      	
-      	<tr>
-      		<td>Next of kin</td>
-      		<td><?php ?></td>
-      		<td>Relationship</td>
-      		<td><?php ?></td>
-      		<td>Phone Number</td>
-      		<td><?php ?></td>
-      		<td>Email Address</td>
-      		<td><?php ?></td>
-      	</tr>
-      	
-      </table></p>
-      <p><table>
-      	<tr>
-      		<td>Cover option:</td>
-      		<td><?php ?></td>
-      		<td>Start date:</td>
-      		<td><?php ?></td>
-      		<td>End date:</td>
-      		<td><?php ?></td>
-      	</tr>      	
-      </table></p>
-      
-      <p>
-      	<table>
-      		<tr>
-      			<td> BENEFIT </td>
-      			<td> Accidental death</td>
-      			<td> Accidental Permanent Total Disablement</td>
-      			<td> Hospital cash</td>
-      			<td> Accidental temprary, total disablement.<br> Per week maximum 104 weeks</td>
-      			<td> Accidental medical Expense</td>
-      			<td> Artificial Appliance</td>
-      			<td> Last Expense(Accidental Death)</td>
-      		</tr>
-      		<tr>
-      			<td> Amount ( KES )</td>
-      			<td> <?php ?></td>
-      			<td> <?php ?></td>
-      			<td> <?php ?></td>
-      			<td> <?php ?></td>
-      			<td> <?php ?></td>
-      			<td> <?php ?></td>
-      			<td> <?php ?></td>
-      		</tr>
-      	</table>
-      </p>
-      
-      <p>
-      
-      	<table>
-      		<tr>
-      			<td> Declaration</td>
-      			<td> Response </td>
-      		</tr>
-      		<tr>
-      			<td> <?php ?> </td>
-      			<td> <?php ?></td>
-      		</tr>
-      	</table>
-      </p>
-      <p>
-      <table>
-      	<tr>
-      		<td>1. Manufacture of fireworks or explosives</td>
-      		<td>5. Racing, Rallies and speed testing</td>
-      	</tr>
-      	<tr>
-      		<td>2. Sinking of air, water or gas wells</td>
-      		<td>6. Naval, military, police or Air force operations</td>
-      	</tr>
-      	<tr>
-      		<td>3. Construction and maintenance of coffer dam</td>
-      		<td>7. Professional sports</td>
-      	</tr>
-      	<tr>
-      		<td>4. Airline crew & ship or boat crew</td>
-      		<td>8. Diving</td>
-      	</tr>
-      	<tr>
-      		<td>9. Mining</td>
-      		<td></td>
-      	</tr>
-      </table>
-      	
-      </p>
-      
-      <p>
-      	<table>
-      		<tr>
-      			<td>MPESA</td>
-      			<td>BANK DEPOSIT</td>
-      		</tr>
-      		<tr>
-      			<td>Paybill Number: 260260</td>
-      			<td>Bank Name : Kenya Commercial Bank</td>
-      		</tr>
-      		<tr>
-      			<td>Account Number : Your Policy Number</td>
-      			<td>Account Name : UAP INSURANCE COMPANY LIMITED</td>
-      		</tr>
-      		<tr>
-      			<td></td>
-      			<td>Account number : 1107154170</td>
-      		</tr>
-      		<tr>
-      			<td></td>
-      			<td>Branch : Moi Avenue</td>
-      		</tr>
-      		
-      	</table>
-      </p>
+      <p><?php echo $modalFatory->getPremiumAnddates();?>       
+      	<?php echo $modalFatory->getSelectedCoverBenefits("A");?>
+      	<?php echo $modalFatory->getDeclarationnResponse();?>      
+      	<?php echo $modalFatory->getExclusions();?></p>
     </div>
     <div class="modal-footer">
-      <h3>Modal Footer</h3>
+      <?php $modalFatory->getModalControls();?>
     </div>
   </div>
 

@@ -1,5 +1,5 @@
 <?php
-Class CustomerData {
+Class CustomerDataModel {
 	
 	function _constructor(){
 		

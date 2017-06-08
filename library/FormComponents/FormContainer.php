@@ -85,7 +85,7 @@ class FormContainer{
 	}
 	
 	function getLeftheaderTd($headerText){
-		return "<th class=td-titles>".$headerText."</th>";
+		return "<th>".$headerText."</th>";
 	}
 	
 	function getTD1($text){
@@ -94,7 +94,7 @@ class FormContainer{
 	
 	
 	function getControlsTD($param) {
-		return "<td align=right height=20px>".$param."</td>";;
+		return "<td align=right height=20px>".$param."</td>";
 	}
 	
 	
