@@ -2,12 +2,13 @@
 include '../Model/customerDataModel.php';
 class Customer{
 	
-	protected $cust_title;
-	protected $cust_first_name;
-	protected $cust_second_name;
-	protected $cust_last_name;
-	protected $cust_idno;
-	protected $cust_placeOfWork;
+	var $cust_title;
+	var $cust_first_name;
+	var $cust_second_name;
+	var $cust_last_name;
+	var$cust_idno;
+	var $cust_placeOfWork;
+	var $customerDOB;
 	
 
 	function __construct() {
@@ -95,4 +96,24 @@ class Customer{
 	public function getCustTitle(){
 		return $this->cust_title;
 	}
+	
+	
+	function setCutomerID($paramID){
+		
+	}
+	
+	function getCustomerID(){
+		return $this->cust_idno;
+	}
+	
+	
+	function setCustomerDOB($paramDOB){
+		$this->customerDOB=$paramDOB;
+	}
+	
+	
+	function getCustomerDOB(){
+		return $this->customerDOB;
+	}
+	
 }

@@ -5,7 +5,5 @@ class PaymentOption{
 	
 	function __construct(){
 		
-	}
-	
-	 
+	}	 
 }

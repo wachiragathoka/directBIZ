@@ -1,7 +1,7 @@
 <?php
 require '../../library/quotePDFFactory.php';
 require('../../library/fpdf/fpdf.php');
-require('../../library/modalFactory.php');
+//require('../../library/modalFactory.php');
 
 class PDF extends FPDF
 {
@@ -57,9 +57,151 @@ class PDF extends FPDF
 	function premiumAndDates($paramString){
 		$this->Cell(0,10,htmlentities($paramString));
 	}
+	
+	function horizontalLine($x1,$y1,$x2,$y2){
+		//$this->Line(float x1, float y1, float x2, float y2)
+		//x1 -	Abscissa of first point.
+		//y1 - Ordinate of first point.
+		//x2 - Abscissa of second point.
+		//y2 - Ordinate of second point.
+		
+		$this->Line($x1, $y1, $x2, $y2);
+	}
+	
+	function headingCells($data){
+		//$this->SetFillColor(255);
+		$this->SetTextColor(0);
+		$this->SetFont('','B',14);
+		$this->SetXY(70, 30.1);
+		$this->Cell(280,7,$data,0);		
+	}
+	
+	function subHeadingCell($data,$x,$y){
+		$this->SetFillColor(224,235,255);
+		$this->SetTextColor(0);
+		$this->SetFont('','B',10);
+		$this->SetXY($x, $y);//X,Y
+		$this->SetDrawColor(224,235,255);
+		//$this->SetLineWidth(.1);		
+		$this->Cell(190,7,$data,"TB",0,'L',true);	
+	}
+	
+	
+	function tableData($subHeader, $data,$x,$y){
+		// Colors, line width and bold font
+		//$this->SetFillColor(128,0,0);
+		//$this->SetTextColor(0);
+		//$this->SetDrawColor(0);
+		//$this->SetLineWidth(0);
+		
+		$this->SetXY($x,$y);
+
+		//$w = array(40,50);
+		//$datacell="odd";
+		for($i=0;$i<count($subHeader);$i++){//
+			
+				//if($datacell=="odd"){
+					$this->SetFont('','B',10);
+					$this->Cell(35,7,$subHeader[$i],1,0,'L');
+					//$datacell="even";
+				//}else{
+					$this->SetFont('','',10);
+					$this->Cell(60,7,$data[$i],1,0,'L');
+					//$datacell="odd";
+				//}
+				
+					if($i==1||$i==3||$i==5||$i==7||$i==9||$i==11){
+					$this->Ln();
+				}
+		}
+	}
+	
+	
+	function benefistTableData($subHeader, $data,$x,$y){
+		$this->SetXY($x,$y);
+		
+		for($i=0;$i<count($subHeader);$i++){//
+
+			
+			$this->SetFont('','',10);
+			$this->Cell(80,8,$subHeader[$i],1,0,'L');
+
+			
+			$this->SetFont('','B',10);
+			$this->Cell(30,8,$data[$i],1,0,'L');
+			
+			$this->Ln();			
+		}
+		
+		
+	}
+	
+	function dataCell($data,$x,$y){
+		//$this->SetFillColor(224,235,255);
+		$this->SetTextColor(0);
+		$this->SetFont('','',10);
+		$this->SetXY($x, $y);//X,Y
+		$this->SetDrawColor(224,235,255);
+		//$this->SetLineWidth(.1);
+		//$this->Cell(190,7,$data,"TB",0,'L',true);	
+		$this->MultiCell(150,7,$data);
+		$this->Ln();
+	}
+	
+	
+	function multiCelldata($data,$x,$y){
+		$this->SetFillColor(220,0,0);
+		$this->SetTextColor(0);
+		$this->SetFont('','',10);
+		$this->SetXY($x, $y);//X,Y
+		$this->SetDrawColor(224,235,255);
+		//$this->SetLineWidth(.1);
+		//$this->Cell(190,7,$data,"TB",0,'L',true);
+		$this->MultiCell(130,5,$data,1,'L',true);
+		$this->Ln();  
+	}
+	
+	function exclusions($data1,$data2,$x,$y){		
+		
+		$this->SetXY($x,$y);
+		
+		for($i=0;$i<count($data1);$i++){//			
+			
+			$this->SetFont('','',10);
+			$this->Cell(80,7,$data1[$i],1,0,'L');			
+			
+			$this->SetFont('','',10);
+			$this->Cell(80,7,$data2[$i],1,0,'L');
+			
+			$this->Ln();
+		}		
+	}
+	
+	function declarationsTable($declarartionHeader, $data,$x,$y){
+		$this->SetXY($x,$y);
+		
+		for($i=0;$i<count($declarartionHeader);$i++){//
+			if($i<1){
+				$this->SetFont('','B',10);
+				$this->Cell(130,8,$declarartionHeader[$i],1,0,'L');
+				
+				$this->SetFont('','B',10);
+				$this->Cell(30,8,$data[$i],1,0,'L');
+			}else {				
+				
+					$this->SetFont('','',10);
+					$this->Cell(130,7,$declarartionHeader[$i],1,0,'L');
+					
+					$this->SetFont('','',10);
+					$this->Cell(30,7,$data[$i],1,0,'L');
+							}
+			$this->Ln();
+		}
+	}	
 }
 
-$modalFactory=new ModalFactory();
+$pdffactory=new PDFQuoteFactory();
+//$modalFactory=new ModalFactory();
 $pdf = new PDF();
 // Column headings
 //$header = array('Country', 'Capital', 'Area (sq km)', 'Pop. (thousands)');
@@ -67,7 +209,123 @@ $pdf = new PDF();
 //$data = $pdf->LoadData('countries.txt');
 $pdf->SetFont('Arial','',14);
 $pdf->AddPage();
+//$pdf->SetAutoPageBreak(true);
+
+
 //$pdf->customerDataTable($header,$data);
-$pdf->premiumAndDates($modalFactory->getPremiumAnddates());
+$pdf->horizontalLine(10, 30, 200, 30);
+$pdf->headingCells("PERSONAL ACCIDENT COVER");
+$pdf->horizontalLine(10, 37, 200, 37);
+
+$pdf->subHeadingCell("CLIENT DETAILS",10,39);
+
+//Customer Data
+$customerData=array("Mathew Gathoka Wachira","19/01/1980","24003658","A57949667P","5300","00100","0722896425","mgathoka@uap-group.com","Peter Gathoka","Father","07229876654","PMburu@gmail.com");
+$customerDatasubheading=array("Name","Date Of Birth","ID Number", "KRA PIN","P.O. Box","Postal Code","Phone Number","Email","Next of Kin","Relationship","Phone Number","Email");
+$pdf->tableData($customerDatasubheading,$customerData,10,48);
+
+$pdf->subHeadingCell("COVER DETAILS",10,92);
+
+//Cover Details
+
+$CoverSubheading=array("Cover Amount (KES)","Cover Option:","Cover Start on:", "Cover ends on:");
+$coverdetails=array("3000","PLAN E","6-July-2017","5-July-2017");
+$pdf->tableData($CoverSubheading,$coverdetails,10,99);
+
+//Cover Plan benefits
+$selectedCoverbenefitsTitles=array(
+				"BENEFIT",
+				"Accidental death",
+				"Accidental Permanent Total Disablement",
+				"Hospital cash",
+				"Accidental temprary, total disablement.\n Per week maximum 104 weeks",
+				"Accidental medical Expense",
+				"Artificial Appliance",
+				"Last Expense(Accidental Death)");
+
+$selectedCoverbenefits=array("Amounts(KES)",100000,20000,10000,30000,2000,50000,200);
+//$selectedCoverbenefits=$pdffactory->getCoverBenefits("A");
+$pdf->benefistTableData($selectedCoverbenefitsTitles,$selectedCoverbenefits,10,120);
+
+
+//time Excess
+$pdf->subHeadingCell("TIME EXCESS",10,185);
+$timeExcessdata="Temporary Total Disablement (Excluding the first seven (7) days)\nHospital Cash (Excluding the first three (3) days)";
+$pdf->dataCell($timeExcessdata,13,193);
+
+
+//Declarations
+
+$declarationQuestions=array(
+		"Declaration",
+		"Have you previously held Personal Accident \ncover ?",
+		"If yes , name the insurer:",
+		"Are you free from any physical disability or \nmental illness to the best of your knowledge ?",
+		"If No above, give details:",
+		"Give details of all accidents you have sustained \nin the last five (5) years :",
+		"Are you engaged in any of the excluded activities \nor occupations",
+		"If Yes, would you like an extension of cover to \nthese activities(Extra 25% of the basic premium )"
+);
+
+$declarationsResponses=array(
+		"Response",
+		"Yes",
+		"UAP",
+		"No",
+		"Example of disability is listed here",
+		"Accident 1. Give details here, Accident 2. \nGive details here, Accident 3. Give details here",
+		"Yes: Football, horse racing",
+		"Yes, I would like. additional cover"
+		
+);
+$pdf->subHeadingCell("DECLARARTIONS",10,210);
+$pdf->declarationsTable($declarationQuestions,$declarationsResponses,10,217);
+
+$pdf->AddPage();
+//$pdf->SetAutoPageBreak(true);
+//AcceptanceDeclaration
+$acceptanceDeclaration="I warrant that the above statements made by me or on my behalf are true and complete to the best of my knowledge and belief and I agree that this proposal shall bethe basis of the contract between me and the company. I also declare that no insurer has ever declined, refused to renew , terminated my insurance , increased my insurance premium or imposed special terms";
+$pdf->multiCelldata($acceptanceDeclaration,10,10);
+
+//Excluded activities
+$pdf->subHeadingCell("Exclusions",10,37);
+$exclusions=array(
+		"1. Manufacture of fireworks or explosives",
+		"2. Sinking of air, water or gas wells",
+		"3. Construction and maintenance of coffer dam",
+		"4. Airline crew & ship or boat crew",
+		"5. Racing, Rallies and speed testing",
+		"6. Naval, military, police or Air force operations",
+		"7. Professional sports",
+		"8. Diving",
+		"9. Mining"
+);
+
+if(count($exclusions)%2!=0){
+	array_push($exclusions, " ");
+}
+
+$firsthalf=array_slice($exclusions, 0, ceil(count($exclusions)/2));
+$secondhalf=array_slice($exclusions, floor(count($exclusions)/2));
+$pdf->exclusions($firsthalf,$secondhalf,10,44);
+
+
+//payment Options
+$pdf->subHeadingCell("PAYMENT OPTIONS",10,82);
+$MpesaPayment=array(
+		"Paybill Number: 260260",
+		"Account Number : Your Policy Number"
+	);
+
+$bankDetails=array(
+		"Bank Name : Kenya Commercial Bank",
+		"Account Name : UAP INSURANCE COMPANY LIMITED",
+		"Account number : 1107154170",
+		"Branch : Moi Avenue",
+		"Please indicate your policy number"
+		
+);
+
+
 $pdf->Output();
 ?>
