@@ -392,5 +392,5 @@ $SystemDetails= array("EasyDIRECT SelfService Portal","".date('F j, Y, g:i a'));
 
 $pdf->QuoteGenerationDate($subheaders,$SystemDetails,10,150);
 
-$pdf->Output();
+$pdf->Output('D','Personal Accident Quote.pdf');
 ?>
