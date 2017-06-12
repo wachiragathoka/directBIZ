@@ -31,6 +31,18 @@ class FormContainer{
 		return $this->containerStart;
 	}
 	
+	function containerwithNoHeader($paramTabulardata){
+		$table="<table width=80%><tr>";
+		$tds="";
+		$tabulardata="";
+		
+		for($i=0; $i< count($paramTabulardata); $i++){
+			$tds=$tds."<td class=data>".$paramTabulardata[$i]."</td>";
+		}
+		
+		return $table.$tds."<tr><\table>";
+	}
+	
 	function getContainerEnd(){
 		return $this->containerend;
 	}
@@ -55,10 +67,7 @@ class FormContainer{
 	
 	//CUstom Fields
 	function getcustomContainerStart($colspan){
-		return "<table>
-					<tr>
-						<th colspan=".$colspan.">&nbsp; </th>
-					</tr>";
+		return "<table width=80%>";					
 	}
 	
 	function getNumberTd($number){
@@ -92,8 +101,13 @@ class FormContainer{
 	
 	
 	function getControlsTD($param) {
-		return "<td align=right height=20px>".$param."</td>";
-	}	
+		return "<td height=20px>".$param."</td>";
+	}
 	
-	
+	function fieldset($legendData,$data){
+		return "<fieldset class=fieldset>
+			<legend>".$legendData."</legend>
+				".$data."
+		</fieldset>";
+	}
 }

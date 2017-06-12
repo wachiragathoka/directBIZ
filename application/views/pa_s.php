@@ -10,29 +10,31 @@ include_once 'library/FormComponents/FormContainer.php';
 	$formFactory=new FormFactory();
 	$container=new FormContainer();
 	
-	echo $container->getContainerStart();
 	
+	
+	//echo $container->getContainerStart();
+	echo $formFactory->step1();
 	//Personal data	
-	echo $formFactory->createpersonalData();
+	//echo $formFactory->createpersonalData();
 	
 	//contact data
-	echo $formFactory->createContactData();
+	//echo $formFactory->createContactData();
 	
 	//Idnentification
-	echo $formFactory->createIdentification();
+	//echo $formFactory->createIdentification();
 	
 	//Next of a KIN
-	echo $formFactory->createNextOFAKin();
+	//echo $formFactory->createNextOFAKin();
 	
-	echo $container->getContainerEnd();	
+	//echo $container->getContainerEnd();	
 	
-	echo $formFactory->coverDetails();
+	//echo $formFactory->coverDetails();
 	
-	echo $formFactory->declaraions();
+	//echo $formFactory->declaraions();
 	
-	echo $formFactory->finalDeclaration();
+	//echo $formFactory->finalDeclaration();
 	
-	echo $formFactory->buttonControls();
+	//echo $formFactory->buttonControls();
 	
 	?>	
 </form>
