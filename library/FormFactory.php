@@ -117,6 +117,25 @@ class FormFactory {
 	}
 	
 	
+	function studentOrNormalPA(){
+		$divelement="<div class=example>";
+		$enddivElement="</div>";
+		$iSstudentpaReturn=array("Please select One");
+		
+		
+		
+		
+		$covers=array("Personal Accident Cover","Student Personal accident Cover");
+		$coverValues =array("pa","spa");
+		 for($i=0;$i<2;$i++){
+		 	$iSstudentpa=new RadioField($covers[$i],"paORStudent","paORStudent","paORStudent",$coverValues[$i]);
+		 	array_push($iSstudentpaReturn, $iSstudentpa->getRadioField());		 	
+		 }
+		 
+		 return $divelement.$this->container->containerwithNoHeader($iSstudentpaReturn).$enddivElement;
+	}
+	
+	
 	function coverDetails(){
 		
 		$leftHeaders=array(
@@ -241,18 +260,19 @@ class FormFactory {
 	}
 	
 	function returnSelectetableRadio(){
-		
+		$divelement="<div class=example>";
+		$enddivElement="</div>";
 		$radioButtons=array("A","B","C","D","E","F","G");
-		$strRadioButtons="";
+		$strRadioButtons=$this->container->getControlsTD("");
 		
 		
 		for($i=0;$i<count($radioButtons);$i++){
-			$coverOption=new RadioField("Select","coverOption","coverOption","coverOption",$radioButtons[$i]);
+			$coverOption=new RadioField(" ","coverOption","coverOption","coverOption",$radioButtons[$i]);
 			$strRadioButtons=$strRadioButtons.$this->container->getControlsTD($coverOption->getRadioField());
 		}
 		
 		return $this->container->getTR ().
-		$this->container->getControlsTD(" ").$strRadioButtons.
+		$this->container->getControlsTD(" ").$divelement.$strRadioButtons.$enddivElement.
 				$this->container->getTrEnd ();
 	}
 	
@@ -336,5 +356,13 @@ I agree to accept a policy in the company’s usual form for this class of insuran
 				$this->container->getControlsTD($resetButton->getButton()).
 			$this->container->getTrEnd ().
 		$this->container->getContainerEnd();				
-	}	
+	}
+	
+	function step1(){
+		$legendData="";
+		$data=$this->studentOrNormalPA().$this->coverDetails();
+		return $this->container->fieldset($legendData, $data);
+	}
 }
+
+
