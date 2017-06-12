@@ -276,8 +276,7 @@ $declarationsResponses=array(
 		"Accident 1. Give details here, Accident 2. \nGive details here, Accident 3. Give details here",
 		"Yes: Football, horse racing",
 		"Yes, I would like. additional cover"
-		
-);
+		);
 $pdf->subHeadingCell("DECLARARTIONS",10,210);
 $pdf->declarationsTable($declarationQuestions,$declarationsResponses,10,217);
 
