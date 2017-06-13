@@ -11,20 +11,17 @@ class FormContainer{
 	
 	
 	function __construct(){
-		$this->containerStart="<table>
+		$this->containerStart="<table width=100%>
 									<tr>
 										<th>&nbsp;</th>
 									</tr>";
 		$this->tr="<tr>";
-		$this->tr_end="<\tr>";
+		$this->tr_end="</tr>";
 		
 		$this->td="<td>";
 		$this->td_end="</td>";
 		
-		$this->containerend="<tr>
-								<td>&nbsp;</td>
-							 </tr>
-							</table>";
+		$this->containerend="</table>";
 	}
 	
 	function getContainerStart(){
@@ -32,15 +29,19 @@ class FormContainer{
 	}
 	
 	function containerwithNoHeader($paramTabulardata){
-		$table="<table width=80%><tr>";
+		$table="<table width=100%><tr>";
 		$tds="";
 		$tabulardata="";
 		
+		
+		
 		for($i=0; $i< count($paramTabulardata); $i++){
-			$tds=$tds."<td class=data>".$paramTabulardata[$i]."</td>";
+			$tds=$tds."<td align=left>".$paramTabulardata[$i]."</td>";
 		}
 		
-		return $table.$tds."<tr><\table>";
+		return $table.$tds."</tr></table>";
+		
+		//var_dump($table.$tds."</tr></table>");
 	}
 	
 	function getContainerEnd(){
@@ -67,11 +68,11 @@ class FormContainer{
 	
 	//CUstom Fields
 	function getcustomContainerStart($colspan){
-		return "<table width=80%>";					
+		return "<table width=100% class=benefit-values>";					
 	}
 	
 	function getNumberTd($number){
-		return "<td align=right class=align-right>".number_format($number,2)."</td>";
+		return "<td align=right class=align-right>".number_format($number)."</td>";
 	}
 	
 	function getnumberTh($headerText){
@@ -92,7 +93,7 @@ class FormContainer{
 	}
 	
 	function getLeftheaderTd($headerText){
-		return "<th>".$headerText."</th>";
+		return "<th width=20%>".$headerText."</th>";
 	}
 	
 	function getTD1($text){
@@ -101,7 +102,22 @@ class FormContainer{
 	
 	
 	function getControlsTD($param) {
-		return "<td height=20px>".$param."</td>";
+		return "<td height=30px align=center>".$param."</td>";
+	}
+	
+	
+	function getControlsContainer($paramTabulardata) {
+		$table="<table width=100% align=right><tr>";
+		$tds="";
+		$tabulardata="";
+		
+		
+		
+		for($i=0; $i< count($paramTabulardata); $i++){
+			$tds=$tds."<td align=right>".$paramTabulardata[$i]."</td>";
+		}
+		
+		return $table.$tds."</tr></table>";
 	}
 	
 	function fieldset($legendData,$data){

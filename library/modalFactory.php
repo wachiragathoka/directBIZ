@@ -1,10 +1,12 @@
 <?php
-include 'FormComponents/FormField.php';
-include_once 'FormComponents/FormContainer.php';
-include 'FormComponents/SelectField.php';
-include 'FormComponents/radioField.php';
-include 'FormComponents/buttons.php';
-include '../../application/app/coverDetail.php';
+//include 'FormComponents/FormField.php';
+//include_once 'FormComponents/FormContainer.php';
+//include 'FormComponents/SelectField.php';
+//include 'FormComponents/radioField.php';
+//include 'FormComponents/buttons.php';
+
+//include '../../application/app/coverDetail.php';//
+//include './application/app/coverDetail.php';//relative to inded
 
 class ModalFactory{
 	
@@ -170,10 +172,10 @@ class ModalFactory{
 	
 	
 	function getModalControls(){
-		$okButton=new Button("okBTN","OkGenerateQuote", "button", "okBTN");
-		$cancelButton=new Button("cancelBTN","ComputeAgain", "button", "cancelBTN");
+		$okButton=new Button("okBTN","OkGenerateQuote", "button", "okBTN","step2()");
+		$cancelButton=new Button("cancelBTN","ComputeAgain", "button", "cancelBTN","");
 		
-		echo $okButton->getButton();
-		echo $cancelButton->getButton();
+		echo $okButton->getButton()." ";
+		echo " ".$cancelButton->getButton();
 	}
 }

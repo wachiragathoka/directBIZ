@@ -7,7 +7,6 @@ class CoverDetailsModel{
 	
 	function getSelectedCoverDetails($selectedCover){
 		return array(
-				0,
 				100000,
 				20000,
 				10000,

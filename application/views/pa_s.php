@@ -1,9 +1,9 @@
 <?php 
-include 'library/FormFactory.php';
-include_once 'library/FormComponents/FormContainer.php';
+//include 'library/FormFactory.php';
+//include_once 'library/FormComponents/FormContainer.php';
 ?>
 
-<form method="post" action="./application/controller/PA_controller.php"> 
+<form method="post" action="./application/controller/PA_controller.php" name="applicationForm"> 
 	<?php
 //form container
 

@@ -20,7 +20,8 @@ class RadioField{
 	
 	function getRadioField(){
 		
-		return "<input id=".$this->radioID." type=radio name=".$this->radioName." value=".$this->radioValues." ><label for=".$this->radioName."><span><span></span></span>".$this->labelName."</label>";
+		return "<input id=".$this->radioID." type=radio name=".$this->radioName." value=".$this->radioValues." ><label for=".$this->labelFor."><span><span></span></span>".$this->labelName."</label>";
+	
 	}
 }
 ?>

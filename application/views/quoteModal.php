@@ -1,108 +1,29 @@
-<?php 
-include '../../library/modalFactory.php';
+<?php
+//include '../../library/modalFactory.php'; //Path relative toModal window
+//include 'library/modalFactory.php';//path relative to index file
 //include 'library/FormFactory.php';
 //include_once 'library/FormComponents/FormContainer.php';
 
 
 $modalFatory= new ModalFactory();
 ?>
-<!DOCTYPE html>
+<!-- <!<!DOCTYPE html>
 <html>
 <head>
 <style>
 /* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 60px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 90%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    
-}
 
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header {
-    padding: 2px 10px;
-    background-color: #5cb85c;
-    color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-    padding: 2px 10px;
-    background-color: #5cb85c;
-    color: white;
-}
-
-table{
-	width: 100%;
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-td, th { border: 1px solid #CCC; padding: 5px;} 
-
-th {
-background: #F3F3F3; /* Light grey background */
-font-weight: bold; /* Make sure they're bold */
-}
 </style>
 </head>
 <body>
 
-<h2>Click below to view Quote</h2>
+<h2>Click below to view Quote</h2> -->
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Click to view Quote</button>
+<!-- <input type="button" id="myBtn" value="Click to view Quote"/> -->
 
 <!-- The Modal -->
+<script type="text/javascript" src="application/assets/js/pa.js"></script>
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
@@ -112,10 +33,12 @@ font-weight: bold; /* Make sure they're bold */
       <h2>Cover Summary</h2>
     </div>
     <div class="modal-body">
-      <p><?php echo $modalFatory->getPremiumAnddates();?>       
+      <p><?php echo $modalFatory->getPremiumAnddates();?>     
+      <br />  
       	<?php echo $modalFatory->getSelectedCoverBenefits("A");?>
-      	<?php echo $modalFatory->getDeclarationnResponse();?>      
-      	<?php echo $modalFatory->getExclusions();?></p>
+      	
+      	<?php //echo $modalFatory->getDeclarationnResponse();?>      
+      	<?php //echo $modalFatory->getExclusions();?></p>
     </div>
     <div class="modal-footer">
       <?php $modalFatory->getModalControls();?>
@@ -129,14 +52,39 @@ font-weight: bold; /* Make sure they're bold */
 var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn = document.getElementById("nextbtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    modal.style.display = "block";
+
+	var paORstudent=document.getElementsByName("paORStudent");
+	var selectedCoverOption=document.getElementsByName("coverOption");	
+	var error=false;
+
+
+	for (var i = 0; i<selectedCoverOption.length; i++) {
+	    if (selectedCoverOption[i].checked) {
+	    	selectedCoverBenefit=selectedCoverOption[i];
+	        break;
+	    }	    
+	}
+
+	if(selectedCoverBenefit==""){
+		error=true;
+		document.getElementById("errorCoverOption").value="Please Select one benefit";
+	}
+	
+	
+	if(paORstudent[0].checked || paORstudent[1].checked && !error){
+				modal.style.display = "block";
+		
+	}	else{
+		alert(error);
+	}
+   
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -151,6 +99,5 @@ window.onclick = function(event) {
     }
 }
 </script>
-
-</body>
-</html>
+<!-- </body>
+</html> -->

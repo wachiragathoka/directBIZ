@@ -1,9 +1,9 @@
 <?php
-include 'FormComponents/FormField.php';
-include_once 'FormComponents/FormContainer.php';
-include 'FormComponents/SelectField.php';
-include 'FormComponents/radioField.php';
-include 'FormComponents/buttons.php';
+//include 'FormComponents/FormField.php';
+//include_once 'FormComponents/FormContainer.php';
+//include 'FormComponents/SelectField.php';
+//include 'FormComponents/radioField.php';
+//include 'FormComponents/buttons.php';
 class FormFactory {
 	var $container;
 	function __construct() {
@@ -125,14 +125,19 @@ class FormFactory {
 		
 		
 		
-		$covers=array("Personal Accident Cover","Student Personal accident Cover");
-		$coverValues =array("pa","spa");
+		$labelName=array("Personal Accident Cover","Student Personal accident Cover");
+		$labelForTags=array("pa","spa");//Same as ID
+		$radioValue =array("pa","spa");
+		$radioID=array("pa","spa");
+		
 		 for($i=0;$i<2;$i++){
-		 	$iSstudentpa=new RadioField($covers[$i],"paORStudent","paORStudent","paORStudent",$coverValues[$i]);
+		 	$iSstudentpa=new RadioField($labelName[$i],$labelForTags[$i],"paORStudent",$radioID[$i],$radioValue[$i]);
 		 	array_push($iSstudentpaReturn, $iSstudentpa->getRadioField());		 	
 		 }
 		 
 		 return $divelement.$this->container->containerwithNoHeader($iSstudentpaReturn).$enddivElement;
+		 
+		 //return $this->container->containerwithNoHeader($iSstudentpaReturn);
 	}
 	
 	
@@ -262,12 +267,17 @@ class FormFactory {
 	function returnSelectetableRadio(){
 		$divelement="<div class=example>";
 		$enddivElement="</div>";
-		$radioButtons=array("A","B","C","D","E","F","G");
+		$radioValues=array("A","B","C","D","E","F","G");
+		$radioLabel="";
+		$radioLabelfortag=array();
+		$radioID=array("A","B","C","D","E","F","G");
+		
+		
 		$strRadioButtons=$this->container->getControlsTD("");
 		
 		
-		for($i=0;$i<count($radioButtons);$i++){
-			$coverOption=new RadioField(" ","coverOption","coverOption","coverOption",$radioButtons[$i]);
+		for($i=0;$i<count($radioValues);$i++){
+			$coverOption=new RadioField(" ",$radioID[$i],"coverOption",$radioID[$i],$radioValues[$i]);
 			$strRadioButtons=$strRadioButtons.$this->container->getControlsTD($coverOption->getRadioField());
 		}
 		
@@ -358,10 +368,26 @@ I agree to accept a policy in the company’s usual form for this class of insuran
 		$this->container->getContainerEnd();				
 	}
 	
+	
+	function buttonNext(){
+		$nextButton = new Button("nextbtn","next", "button", "nextbtn","");
+		//var_dump($nextButton->getButton());
+		
+		
+		return $this->container->getControlsContainer(array($nextButton->getButton()));
+	}
+	
 	function step1(){
 		$legendData="";
-		$data=$this->studentOrNormalPA().$this->coverDetails();
+		$data=$this->studentOrNormalPA().$this->coverDetails()."<br>".$this->buttonNext();
+		
 		return $this->container->fieldset($legendData, $data);
+	}
+	
+	
+	function step2(){
+		$legendData="";
+		
 	}
 }
 
