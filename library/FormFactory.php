@@ -369,25 +369,52 @@ I agree to accept a policy in the company’s usual form for this class of insuran
 	}
 	
 	
-	function buttonNext(){
-		$nextButton = new Button("nextbtn","next", "button", "nextbtn","");
-		//var_dump($nextButton->getButton());
-		
+	function buttonNext($paramButtonName,$paramButtonValue, $paramButtonType, $paramButtonID,$paramjsFunction){
+		$nextButton = new Button($paramButtonName,$paramButtonValue, $paramButtonType, $paramButtonID,$paramjsFunction);		
 		
 		return $this->container->getControlsContainer(array($nextButton->getButton()));
 	}
 	
+	function pdfQuoteLink($paramLinkTo, $paramTarget, $paramLinkLabel){
+		$pdfQuote=new Anchor($paramLinkTo, $paramTarget, $paramLinkLabel);
+		return $pdfQuote->getLink();
+	}
+	
 	function step1(){
+		$div1="<div class=visible id=selectQuote><span>";
+		$divend="</span></div>";
 		$legendData="";
-		$data=$this->studentOrNormalPA().$this->coverDetails()."<br>".$this->buttonNext();
+		$data=$this->studentOrNormalPA().$this->coverDetails()."<br>".$this->buttonNext("nextbtn","next", "button", "nextbtn","");
 		
-		return $this->container->fieldset($legendData, $data);
+		return $div1.$this->container->fieldset($legendData, $data).$divend;
 	}
 	
 	
 	function step2(){
-		$legendData="";
+		$div="<div class=visible id=personalDetails><span>";
+		$divend="</span></div>";
+		$legendData="Personal Details";
+		$data=$this->createpersonalData().
+				"<br><br><br>".
+				$this->createContactData().
+				" <br><br><br>".
+				$this->createNextOFAKin().
+				"<br>".
+				$this->buttonNext("step2nextbtn","next", "button", "step2nextbtn","step3()");
 		
+		return $div.$this->container->fieldset($legendData, $data).$divend;		
+	}
+	
+	function step3(){
+		$div="<div class=hidden id=declarationInfo><span>";
+		$divend="</span></div>";
+		$legendData="Declarations";
+		$data=$this->declaraions().$this->finalDeclaration().
+		"<br>".$this->pdfQuoteLink("?pa=pdf ", "_blank", "CompleteandPrintQuote");
+		
+		///echo $this->pdfQuoteLink("?pa=pdf ", "_blank", "Complete and Print Quote");
+		
+		return $div.$this->container->fieldset($legendData, $data);
 	}
 }
 

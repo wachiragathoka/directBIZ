@@ -14,8 +14,7 @@ class Button{
 		$this->buttonValue=$paramButtonValue;
 		$this->jsFuction=$paramJSFunction;
 		
-	}
-	
+	}	
 	
 	function getButton(){
 		return "<input type=".$this->buttonType." name=".$this->butonName." id=".$this->buttonId." Value=".$this->buttonValue." onclick=".$this->jsFuction." />";

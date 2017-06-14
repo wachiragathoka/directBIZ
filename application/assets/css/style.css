@@ -1,5 +1,6 @@
 @CHARSET "ISO-8859-1";
-html,body {
+
+html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%
@@ -17,7 +18,6 @@ body {
 	float: left;
 }
 
-
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -26,29 +26,26 @@ table {
 }
 
 tr:hover {
-  background-color: #ffa;
+	background-color: #ffa;
 }
-
 
 td, th {
-  position: relative;
+	position: relative;
 }
 
-
-td:hover::after,
-th:hover::after {
-  content: "";
-  position: absolute;
-  background-color: #ffa;
-  left: 0;
-  top: -5000px;
-  height: 10000px;
-  width: 100%;
-  z-index: -1;
+td:hover::after, th:hover::after {
+	content: "";
+	position: absolute;
+	background-color: #ffa;
+	left: 0;
+	top: -5000px;
+	height: 10000px;
+	width: 100%;
+	z-index: -1;
 }
 
 /**Benefits Values****/
-.benefit-values,th, td{
+.benefit-values, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;
 	font-size: small;
@@ -56,55 +53,53 @@ th:hover::after {
 	font-weight: bold;
 }
 
-
-fieldset {/*img*/
+fieldset { /*img*/
 	border: 1;
 	margin: 20px;
-  	padding: 0 10px 10px;
-  	border: 1px solid #666;
-  	border-radius: 5px;
-  	 -moz-border-radius:5px;
-  	 -webkit-border-radius: 5px;
-  	box-shadow: 0 0 10px #666;
-  	padding-top: 10px;
+	padding: 0 10px 10px;
+	border: 1px solid #666;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 0 0 10px #666;
+	padding-top: 10px;
 }
 
-address,caption,cite,code,dfn,th,var {
+address, caption, cite, code, dfn, th, var {
 	font-style: normal;
 	font-weight: normal;
 }
 
-ol,ul {
+ol, ul {
 	list-style: none;
 }
 
-caption,th {
+caption, th {
 	text-align: left;
 }
 
-.th-titles{
+.th-titles {
 	text-align: center;
 	background-color: gray;
 	font-weight: bold;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
 	font-size: 100%;
 	font-weight: normal;
 }
 
-q:before,q:after {
+q:before, q:after {
 	content: '';
 }
 
-abbr,acronym {
+abbr, acronym {
 	border: 0;
 }
 
-section,header {
+section, header {
 	display: block;
 }
-
 
 img {
 	border: none;
@@ -114,7 +109,7 @@ img {
 	zoom: 1;
 }
 
-.clearfloat:before,.clearfloat:after {
+.clearfloat:before, .clearfloat:after {
 	content: "";
 	display: table;
 }
@@ -126,8 +121,6 @@ img {
 td {
 	padding: 3px;
 }
-
-
 
 label {
 	font-weight: bold;
@@ -141,7 +134,7 @@ input[type="text"] {
 	border: 1px solid #CCC;
 	font-size: 16px;
 	height: 25px;
-	padding-left:5px;
+	padding-left: 5px;
 	moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-khtml-border-radius: 5px;
@@ -258,201 +251,228 @@ label:after {
 
 .quote-section-header {
 	border-top-style: solid;
-	border-bottom-style:solid;
-    border-width: 1px;    
-    padding: 5px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;    
+	border-bottom-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
 }
 
-.quote-subheader{
+.quote-subheader {
 	background-color: #F5F5F5;
-	font-weight: bold;	
+	font-weight: bold;
 }
 
-.double_underline{
+.double_underline {
 	border-bottom: 3px double;
 }
 
-.single-underline{
-	border-bottom: 1px solid;	
+.single-underline {
+	border-bottom: 1px solid;
 }
 
-.taglabelsfont{
-		font-size: 14px;
-		font-weight: bold;
-	}
-.clausestable{
-	 padding: 15px;
-    text-align: left;
-    overflow-x:auto;
-     
+.taglabelsfont {
+	font-size: 14px;
+	font-weight: bold;
 }
 
-.clausestable,td,th {border-bottom: 1px solid #ddd;}
+.clausestable {
+	padding: 15px;
+	text-align: left;
+	overflow-x: auto;
+}
 
-.clausestable odd{
-		background-color: #f5f5f5
-	}
+.clausestable, td, th {
+	border-bottom: 1px solid #ddd;
+}
+
+.clausestable odd {
+	background-color: #f5f5f5
+}
 
 /*error */
-error{
+error {
 	
-	
-	}
-	
-	
-	
-	
-	
-	
+}
+
 /**************RADIO/CHECK BOX ****************/
-
-.example{
-  margin-bottom : 1.5em;
+.example {
+	margin-bottom: 1.5em;
 }
 
-input[type=checkbox]:not(old),
-input[type=radio   ]:not(old){
-  width     : 2em;
-  margin    : 0;
-  padding   : 0;
-  font-size : 1em;
-  opacity   : 0;
+input[type=checkbox]:not(old), input[type=radio]:not(old) {
+	width: 2em;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	opacity: 0;
 }
 
-input[type=checkbox]:not(old) + label,
-input[type=radio   ]:not(old) + label{
-  display      : inline-block;
-  margin-left  : -2em;
-  line-height  : 1.5em;
+input[type=checkbox]:not(old)+label, input[type=radio]:not(old)+label {
+	display: inline-block;
+	margin-left: -2em;
+	line-height: 1.5em;
 }
 
-input[type=checkbox]:not(old) + label > span,
-input[type=radio   ]:not(old) + label > span{
-  display          : inline-block;
-  width            : 0.875em;
-  height           : 0.875em;
-  margin           : 0.25em 0.5em 0.25em 0.25em;
-  border           : 0.0625em solid rgb(192,192,192);
-  border-radius    : 0.25em;
-  background       : rgb(224,224,224);
-  background-image :    -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image :     -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image :      -o-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image : -webkit-linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
-  vertical-align   : bottom;
+input[type=checkbox]:not(old)+label>span, input[type=radio]:not(old)+label>span
+	{
+	display: inline-block;
+	width: 0.875em;
+	height: 0.875em;
+	margin: 0.25em 0.5em 0.25em 0.25em;
+	border: 0.0625em solid rgb(192, 192, 192);
+	border-radius: 0.25em;
+	background: rgb(224, 224, 224);
+	background-image: -moz-linear-gradient(rgb(240, 240, 240),
+		rgb(224, 224, 224));
+	background-image: -ms-linear-gradient(rgb(240, 240, 240),
+		rgb(224, 224, 224));
+	background-image: -o-linear-gradient(rgb(240, 240, 240),
+		rgb(224, 224, 224));
+	background-image: -webkit-linear-gradient(rgb(240, 240, 240),
+		rgb(224, 224, 224));
+	background-image: linear-gradient(rgb(240, 240, 240), rgb(224, 224, 224));
+	vertical-align: bottom;
 }
 
-input[type=checkbox]:not(old):checked + label > span,
-input[type=radio   ]:not(old):checked + label > span{
-  background-image :    -moz-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image :     -ms-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image :      -o-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));
-  background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
+input[type=checkbox]:not(old):checked+label>span, input[type=radio]:not(old):checked+label>span
+	{
+	background-image: -moz-linear-gradient(rgb(224, 224, 224),
+		rgb(240, 240, 240));
+	background-image: -ms-linear-gradient(rgb(224, 224, 224),
+		rgb(240, 240, 240));
+	background-image: -o-linear-gradient(rgb(224, 224, 224),
+		rgb(240, 240, 240));
+	background-image: -webkit-linear-gradient(rgb(224, 224, 224),
+		rgb(240, 240, 240));
+	background-image: linear-gradient(rgb(224, 224, 224), rgb(240, 240, 240));
 }
 
-input[type=checkbox]:not(old):checked + label > span:before{
-  content     : '✓';
-  display     : block;
-  width       : 1em;
-  color       : rgb(153,204,102);
-  font-size   : 0.875em;
-  line-height : 1em;
-  text-align  : center;
-  text-shadow : 0 0 0.0714em rgb(115,153,77);
-  font-weight : bold;
+input[type=checkbox]:not(old):checked+label>span:before {
+	content: '✓';
+	display: block;
+	width: 1em;
+	color: rgb(153, 204, 102);
+	font-size: 0.875em;
+	line-height: 1em;
+	text-align: center;
+	text-shadow: 0 0 0.0714em rgb(115, 153, 77);
+	font-weight: bold;
 }
 
-input[type=radio]:not(old):checked +  label > span > span{
-  display          : block;
-  width            : 0.5em;
-  height           : 0.5em;
-  margin           : 0.125em;
-  border           : 0.0625em solid rgb(115,153,77);
-  border-radius    : 0.125em;
-  background       : rgb(153,204,102);
-  background-image :    -moz-linear-gradient(rgb(179,217,140),rgb(153,204,102));
-  background-image :     -ms-linear-gradient(rgb(179,217,140),rgb(153,204,102));
-  background-image :      -o-linear-gradient(rgb(179,217,140),rgb(153,204,102));
-  background-image : -webkit-linear-gradient(rgb(179,217,140),rgb(153,204,102));
-  background-image :         linear-gradient(rgb(179,217,140),rgb(153,204,102));
+input[type=radio]:not(old):checked+label>span>span {
+	display: block;
+	width: 0.5em;
+	height: 0.5em;
+	margin: 0.125em;
+	border: 0.0625em solid rgb(115, 153, 77);
+	border-radius: 0.125em;
+	background: rgb(153, 204, 102);
+	background-image: -moz-linear-gradient(rgb(179, 217, 140),
+		rgb(153, 204, 102));
+	background-image: -ms-linear-gradient(rgb(179, 217, 140),
+		rgb(153, 204, 102));
+	background-image: -o-linear-gradient(rgb(179, 217, 140),
+		rgb(153, 204, 102));
+	background-image: -webkit-linear-gradient(rgb(179, 217, 140),
+		rgb(153, 204, 102));
+	background-image: linear-gradient(rgb(179, 217, 140), rgb(153, 204, 102));
 }
-
-
-
 
 /************Modal Window **************************/
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 60px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 90%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 60px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 90%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s
 }
 
 /* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
+@
+-webkit-keyframes animatetop {
+	from {top: -300px;
+	opacity: 0
 }
 
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+to {
+	top: 0;
+	opacity: 1
+}
+
+}
+@
+keyframes animatetop {
+	from {top: -300px;
+	opacity: 0
+}
+
+to {
+	top: 0;
+	opacity: 1
+}
+
 }
 
 /* The Close Button */
 .close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+	color: white;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+.close:hover, .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .modal-header {
-    padding: 2px 10px;
-    background-color: #5cb85c;
-    color: white;
+	padding: 2px 10px;
+	background-color: #5cb85c;
+	color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+	padding: 2px 16px;
+}
 
 .modal-footer {
-    padding: 2px 10px;
-    background-color: #5cb85c;
-    color: white;
+	padding: 2px 10px;
+	background-color: #5cb85c;
+	color: white;
+}
+
+/******Show hide divs controls ************/
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
 }

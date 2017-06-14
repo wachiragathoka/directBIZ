@@ -1,5 +1,5 @@
 <?php
-//include_once '../Model/coverDetailsModel.php';
+include_once '../Model/coverDetailsModel.php';
 class CoverDetail{
 	
 	var $coverPlan;

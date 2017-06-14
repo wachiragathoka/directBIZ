@@ -107,14 +107,14 @@ class FormContainer{
 	
 	
 	function getControlsContainer($paramTabulardata) {
-		$table="<table width=100% align=right><tr>";
+		$table="<table width=100% align=centre><tr>";
 		$tds="";
 		$tabulardata="";
 		
 		
 		
 		for($i=0; $i< count($paramTabulardata); $i++){
-			$tds=$tds."<td align=right>".$paramTabulardata[$i]."</td>";
+			$tds=$tds."<td align=centre>".$paramTabulardata[$i]."</td>";
 		}
 		
 		return $table.$tds."</tr></table>";

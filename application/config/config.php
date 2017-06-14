@@ -4,6 +4,7 @@ if(!isset($_SESSION))
 	session_start();
 }
 $_SESSION['sysusers_id']=1;
+error_reporting(E_ERROR | E_PARSE);
 define("EMAIL_cc", "mgathoka@uap-group.com");
 define("EMAIL_bcc","wachiragathoka@gmail.com");
 define("TITLE","easyDIRECT");

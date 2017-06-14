@@ -1,5 +1,5 @@
 <?php
-include '../Model/customerDataModel.php';
+
 class Customer{
 	
 	var $cust_title;

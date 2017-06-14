@@ -1,8 +1,7 @@
 <?php
-require_once '../../application/app/Customer.php';
-require_once '../../application/app/coverDetail.php';
 class PDFQuoteFactory {
 	var $customer;
+	
 	function __construct() {
 		$this->customer = new Customer ();
 		$this->coverDetails = new CoverDetail ();

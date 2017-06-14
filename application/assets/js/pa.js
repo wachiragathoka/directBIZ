@@ -7,6 +7,13 @@ var btn = document.getElementById("nextbtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+
+var selectQuote = document.getElementById('selectQuote');
+var customerDetails = document.getElementById('personalDetails');
+var declarations = document.getElementById('declarationInfo');
+
+
+
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
     modal.style.display = "block";
@@ -26,5 +33,17 @@ window.onclick = function(event) {
 
 //Form
 function step2(){
-	alert("ready for step2");
+	selectQuote.setAttribute('class', 'hidden');
+	customerDetails.setAttribute('class', 'visible');
+	declarations.setAttribute('class','hidden');
+}
+
+function step3(){
+	selectQuote.setAttribute('class', 'hidden');
+	customerDetails.setAttribute('class', 'hidden');
+	declarations.setAttribute('class','visible');
+}
+
+function porintPDF(){
+	
 }

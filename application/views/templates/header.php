@@ -5,6 +5,7 @@
 
 <link rel="stylesheet" type="text/css" href="application/assets/css/style.css">
 <script type="text/javascript" src="application/assets/js/pa.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script type="text/javascript">
 
@@ -12,6 +13,6 @@
 </script>
 <title><?php echo constant("TITLE")?> | Quotes</title>
 </head>
-<body>
+<body onload="step1()">
 <div class="top"> </div>
 <div class="top2" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://easydirect.co.ke/assets/easy-direct-logo.png"></div><br />

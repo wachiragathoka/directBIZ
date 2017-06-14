@@ -13,7 +13,9 @@
 	
 	
 	//echo $container->getContainerStart();
-	echo $formFactory->step1();
+	echo $formFactory->step1();	//Select Cover 
+	echo $formFactory->step2(); //Personal data, contact information,next of KIN
+	echo $formFactory->step3(); //Declarations
 	//Personal data	
 	//echo $formFactory->createpersonalData();
 	

@@ -1,7 +1,8 @@
 <?php
-require '../../library/quotePDFFactory.php';
-require('../../library/fpdf/fpdf.php');
-//require('../../library/modalFactory.php');
+include_once '../../library/quotePDFFactory.php';
+include_once '../../library/fpdf/fpdf.php';
+require_once '../../application/app/Customer.php';
+include_once '../../application/app/coverDetail.php';
 
 class PDF extends FPDF
 {
@@ -16,7 +17,7 @@ class PDF extends FPDF
 	{
 		// Page header
 		global $title;
-		$this->Image('http://easydirect.co.ke/assets/easy-direct-logo.png',160,10,40);
+		$this->Image('../assets/images/easy-direct-logo.png',160,10,40);
 		$this->SetFont('Arial','B',15);
 	}
 	
