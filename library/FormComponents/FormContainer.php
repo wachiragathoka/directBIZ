@@ -68,7 +68,7 @@ class FormContainer{
 	
 	//CUstom Fields
 	function getcustomContainerStart($colspan){
-		return "<table width=100% class=benefit-values>";					
+		return "<table width=90% class=benefit-values align=center>";					
 	}
 	
 	function getNumberTd($number){

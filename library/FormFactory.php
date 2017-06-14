@@ -380,18 +380,36 @@ I agree to accept a policy in the company’s usual form for this class of insuran
 		return $pdfQuote->getLink();
 	}
 	
+	
+	function getDateFields($paramLabel,$paramLabelForTag,$paramFieldName,$paramID){
+		$dateField=new DateField($paramLabel,$paramLabelForTag,$paramFieldName,$paramID);
+		return $dateField->dateField();
+	}
+	
+	function startAndEndDates(){
+		$startdate=$this->getDateFields("Cover start on","startdate","startdate","startdate");
+		$endDate=$this->getDateFields("Cover end date","enddate","enddate","enddate");
+		
+		$coverdates=array(
+				$startdate,
+				$endDate
+		);
+		
+		return $this->container->containerwithNoHeader($coverdates);
+}
+	
 	function step1(){
 		$div1="<div class=visible id=selectQuote><span>";
 		$divend="</span></div>";
 		$legendData="";
-		$data=$this->studentOrNormalPA().$this->coverDetails()."<br>".$this->buttonNext("nextbtn","next", "button", "nextbtn","");
+		$data=$this->studentOrNormalPA().$this->coverDetails()."<br>".$this->startAndEndDates()."<br>".$this->buttonNext("nextbtn","next", "button", "nextbtn","");
 		
 		return $div1.$this->container->fieldset($legendData, $data).$divend;
 	}
 	
 	
 	function step2(){
-		$div="<div class=visible id=personalDetails><span>";
+		$div="<div class=hidden id=personalDetails><span>";
 		$divend="</span></div>";
 		$legendData="Personal Details";
 		$data=$this->createpersonalData().

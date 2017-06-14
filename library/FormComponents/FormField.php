@@ -24,9 +24,28 @@ class FormField{
 	}
 	
 	function getField(){
-		return "<label for=".$this->labelnametag.">".$this->labelName." <input type=text name=".$this->fieldname." id=".$this->fieldId."> </label>";
+		return "<label for=".$this->labelnametag.">".$this->labelName." <input type=text name=".$this->fieldname." id=".$this->fieldId."/> </label>";
 	}
 	
 	
+}
+
+class DateField{
+	
+	var $fieldId;
+	var $fieldname;
+	var $label;
+	var $labelfortag;
+	
+	function __construct($paramLabel,$paramLabelForTag,$paramFieldName,$paramID){
+		$this->fieldId=$paramID;
+		$this->label=$paramLabel;
+		$this->labelfortag=$paramLabelForTag;
+		$this->fieldname=$paramFieldName;
+	}
+	
+	function dateField(){
+		return "<label for=".$this->labelfortag.">".$this->label." <input type=text name=".$this->fieldname." id=".$this->fieldId." /></label>";
+	}
 }
 ?>
