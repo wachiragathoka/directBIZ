@@ -2,10 +2,10 @@
 include_once '../Model/coverDetailsModel.php';
 class CoverDetail{
 	
-	var $coverPlan;
-	var $coverStartDate;
+	var $coverPlan;//personal accident or Students cover
+	var $coverStartDate; //
 	var $coverEndDate;
-	var $coverBenefits;
+	var $coverBenefits;//Benefits for plan A,B,C,D,E,F
 	var $premiumPayable;
 	var $declarations;
 	var $excludedItems;
@@ -43,5 +43,28 @@ class CoverDetail{
 	
 	function getExcludedItems(){
 		return $this->excludedItems;
+	}
+	
+	
+	function setCoverPlan($paORstudent){
+		$this->coverPlan=$paORstudent;
+	}
+	
+	
+	function setCoverBenefits($selectedBenefitsOption){
+		$this->coverBenefits=$selectedBenefitsOption;
+	}
+	
+	function setPremiumPayable($paORstudent,$selectedCoverBenefit){
+		$this->premiumPayable=$this->coverDetailModel->getSelectedCoverPremium($paORstudent,$selectedCoverBenefit);
+	}
+	
+	function setCoverStartDate($startdate){
+		$this->coverStartDate=$startdate;
+	}
+	
+	
+	function setCoverEndDate($enddate){
+		$this->coverEndDate=$enddate;
 	}
 }

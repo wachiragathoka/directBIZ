@@ -1,5 +1,20 @@
 <?php
 include '../app/customer.php';
+include_once '../app/coverDetail.php';
+
+$paORstudent=$_GET['pa'];
+$selectedCoverBenefit=$_GET['selectedCoverBenefit'];
+$startdate=$_GET['startdate'];
+$enddate=$_GET['enddate'];
+
+//set selected values
+$coverdetails=new CoverDetail();
+$coverdetails->setCoverPlan($paORstudent);
+$coverdetails->setCoverBenefits($selectedCoverBenefit);
+$coverdetails->setPremiumPayable($paORstudent,$selectedCoverBenefit);
+$coverdetails->setCoverStartDate($startdate);
+$coverdetails->setCoverEndDate($enddate);
+
 
 $customer = new Customer();
 if(!empty($_POST))
@@ -29,6 +44,7 @@ function pageLoader($ParamUrl){
 	$redirectURL = curl_getinfo($ch,CURLINFO_EFFECTIVE_URL );
 	curl_close($ch);
 }
+
 
 
 class PA_Controller{

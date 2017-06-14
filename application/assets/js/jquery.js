@@ -19,6 +19,8 @@ function checkselectedvalues() {
 	//alert("1");
 	var paORstudent = document.getElementsByName("paORStudent");
 	var selectedCoverOption = document.getElementsByName("coverOption");
+	var pa="";
+	var selectedCoverBenefit="";
 	var error = false;
 
 	for (var i = 0; i < selectedCoverOption.length; i++) {
@@ -27,18 +29,26 @@ function checkselectedvalues() {
 			break;
 		}
 	}
+	
 
-	
-	//alert("2");
-	
 	if (selectedCoverBenefit == "") {
 		error = true;
 		//document.getElementById("errorCoverOption").value="Please Select one benefit";
-		alert(error);
+		//alert(error);
 	}
 
 	if (paORstudent[0].checked || paORstudent[1].checked && !error) {
 		
+		if(paORstudent[0].checked){
+			pa=paORstudent[0].value;
+		}else if(paORstudent[1].checked){
+			pa=paORstudent[1].value;
+		}
+		
+		
+		//ajax call
+		//$
+
 		
 		$("#dialog-confirm").dialog({
 			resizable : true,

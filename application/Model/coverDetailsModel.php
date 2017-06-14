@@ -16,4 +16,11 @@ class CoverDetailsModel{
 				200
 		);
 	}
+	
+	
+	function getSelectedCoverPremium($paORstudent,$selectedCoverBenefit){
+		//selectFrom database all where cover matches the params
+		
+		return 60000;
+	}
 }

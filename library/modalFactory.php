@@ -24,7 +24,7 @@ class ModalFactory{
 		 $this->container->getcustomContainerStart(2).//table
 		 	$this->container->getTR(). //tr
 				$this->container->getLeftheaderTd("Premium Amount").//td
-				$this->container->getTD1("30,000").//td
+				$this->container->getTD1($this->coverDetails->getPremiumPayable()).//td //premium payable
 			$this->container->getTdEnd().//</tr>
 		
 			$this->container->getTR(). //tr
