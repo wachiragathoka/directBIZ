@@ -47,7 +47,8 @@ function checkselectedvalues() {
 		
 		
 		//ajax call
-		//$
+		//alert("calling ajax");
+		setStep1Values(pa,selectedCoverBenefit);
 
 		
 		$("#dialog-confirm").dialog({
@@ -71,4 +72,22 @@ function checkselectedvalues() {
 	} else {
 		alert(error);
 	}
+}
+
+function setStep1Values(parampa,paramselectedCoverBenefit){
+	//alert("Inside setStep1Values");
+	
+	$.get("index.php",{step1data:"set",pa:"parampa",coverPlanOption:"C",selectedCoverBenefit:"paramselectedCoverBenefit",startdate:"12/10/12", enddate: "11/10/13"},function(data)
+	
+	{
+		alert("Hi There "+data);
+		
+	});
+	
+	/*$(document).ready(function(
+
+		    $.ajax({ url: 'application/controller/PA_controller.php?pa=value' });
+
+		));*/
+	
 }

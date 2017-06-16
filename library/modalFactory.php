@@ -18,6 +18,9 @@ class ModalFactory{
 		$this->coverDetails=new CoverDetail();
 	}
 	
+	
+
+	
 	function getPremiumAnddates(){
 		
 		return

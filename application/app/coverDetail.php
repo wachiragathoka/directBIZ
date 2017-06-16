@@ -2,13 +2,14 @@
 include_once '../Model/coverDetailsModel.php';
 class CoverDetail{
 	
-	var $coverPlan;//personal accident or Students cover
+	public $coverPlan;//personal accident or Students cover
 	var $coverStartDate; //
 	var $coverEndDate;
 	var $coverBenefits;//Benefits for plan A,B,C,D,E,F
 	var $premiumPayable;
 	var $declarations;
 	var $excludedItems;
+	var $coverPlanOption;
 	
 	
 	var $coverDetailModel;
@@ -17,9 +18,37 @@ class CoverDetail{
 		$this->coverDetailModel=new CoverDetailsModel();
 	}
 	
-	function getCoverPlan(){
+	/**
+	 * @return selected cover plan Personal accident or Student PA
+	 */
+	public function getCoverPlan(){		
 		return $this->coverPlan;
+		var_dump($this->coverPlan);		
 	}
+	
+	
+	
+	
+	/**
+	 * 
+	 * @return selected cover plan option
+	 *  e.g. A,B,C,D,E,F,G
+	 */
+	function getCoverPlanOption(){
+		return  $this->coverPlanOption;
+	}
+	
+	
+	/**
+	 * 
+	 * @param unknown $CoverPlanOption
+	 * 
+	 * Set cover plan option to either A,B,C,D,E,F,G
+	 */
+	function setCoverPlanOption($paramCoverPlanOption){
+		$this->coverPlanOption=$paramCoverPlanOption;
+	}
+	
 	
 	function getCoverStartDate(){
 		return $this->coverStartDate;
@@ -46,8 +75,16 @@ class CoverDetail{
 	}
 	
 	
+	/**
+	 * 
+	 * @param unknown $paORstudent
+	 * 
+	 * Set coverplan to PA or Student Cover
+	 */
 	function setCoverPlan($paORstudent){
 		$this->coverPlan=$paORstudent;
+		
+		//echo $this->coverPlan;
 	}
 	
 	

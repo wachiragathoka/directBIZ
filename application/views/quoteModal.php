@@ -1,7 +1,9 @@
-<div id="dialog-confirm" title="Personal accident Cover option A">
+<?php $modalFatory= new ModalFactory();
+?>
+
+<div id="dialog-confirm" title="<?php echo var_dump($controller->getSelectedCoverPlan())." ok";?>">
 	<p>	<?php 
-			$modalFatory= new ModalFactory();
-			
+					
 			echo $modalFatory->getPremiumAnddates();
 			echo "<br><br>";
 			echo $modalFatory->getSelectedCoverBenefits("A");
