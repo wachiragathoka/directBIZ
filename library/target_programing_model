@@ -1,0 +1,19 @@
+FieldSet fieldset
+	legend : 'First name';
+	
+		Form myform : "_name_myform","_method_post","_action_myform", "JSValidated"
+		using _model_Member, _controller_member
+			FormField firstname : '_name_fistname', '_id_fistname', 'JSValidation', "required", "_widht_default"
+				Label
+					:position "Before"
+					:title "first name";
+				JSValidation 
+					: message	= "This is a required field";
+					
+			Button submitButton : "_type_submit","_value_Submit";
+			
+		Form endForm;
+		
+FieldSet endFieldSet
+
+registration/login/stock

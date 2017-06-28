@@ -7,6 +7,7 @@ class Button{
 	var $buttonValue;
 	var $jsFuction;
 	
+	
 	function __construct($paramButtonName,$paramButtonValue, $paramButtonType, $paramButtonId,$paramJSFunction){
 		$this->butonName=$paramButtonName;
 		$this->buttonId=$paramButtonId;
